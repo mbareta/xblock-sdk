@@ -4,8 +4,8 @@
   "description": "Javascript dependencies for this XBlock",
   "main": "{{cookiecutter.short_name}}/static/js/src/{{cookiecutter.short_name}}.js",
   "scripts": {
-    "watch": "watchify {{cookiecutter.short_name}}/static/js/src/{{cookiecutter.short_name}}.js -o {{cookiecutter.short_name}}/public/js/bundle.js",
-    "build": "browserify {{cookiecutter.short_name}}/static/js/src/{{cookiecutter.short_name}}.js | uglifyjs -c > {{cookiecutter.short_name}}/public/js/bundle.js",
+    "start": "watchify {{cookiecutter.short_name}}/static/js/src/{{cookiecutter.short_name}}.js -p browserify-derequire -o {{cookiecutter.short_name}}/public/bundle.js",
+    "build": "browserify {{cookiecutter.short_name}}/static/js/src/{{cookiecutter.short_name}}.js | uglifyjs -c > {{cookiecutter.short_name}}/public/bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,6 +13,7 @@
   "dependencies": {},
   "devDependencies": {
     "browserify": "^13.1.1",
+    "browserify-derequire": "^0.9.4",
     "uglifyify": "^3.0.4",
     "watchify": "^3.7.0"
   }

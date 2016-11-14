@@ -38,7 +38,9 @@ class {{cookiecutter.class_name}}(XBlock):
 
         # your /static/js/src/*.js files get bundled into bundle.js in public directory
         # there is absolutely no need to edit/remove this
-        frag.add_javascript_url("/public/js/bundle.js"))
+
+        bundle_url = self.runtime.local_resource_url(self, "public/bundle.js")
+        frag.add_javascript_url(bundle_url)
 
         frag.initialize_js('{{cookiecutter.class_name}}')
         return frag
