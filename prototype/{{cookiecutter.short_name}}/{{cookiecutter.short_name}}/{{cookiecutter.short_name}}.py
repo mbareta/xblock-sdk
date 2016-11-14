@@ -35,7 +35,11 @@ class {{cookiecutter.class_name}}(XBlock):
         html = self.resource_string("static/html/{{cookiecutter.short_name|lower}}.html")
         frag = Fragment(html.format(self=self))
         frag.add_css(self.resource_string("static/css/{{cookiecutter.short_name|lower}}.css"))
-        frag.add_javascript(self.resource_string("static/js/src/{{cookiecutter.short_name|lower}}.js"))
+
+        # your /static/js/src/*.js files get bundled into bundle.js in public directory
+        # there is absolutely no need to edit/remove this
+        frag.add_javascript_url("/public/js/bundle.js"))
+
         frag.initialize_js('{{cookiecutter.class_name}}')
         return frag
 
