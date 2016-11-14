@@ -1,3 +1,8 @@
+// this file is the JS entry point for the app
+// put all JS requires here
+// example
+// var foo = require('./foo.js');
+
 /* Javascript for {{cookiecutter.class_name}}. */
 function {{cookiecutter.class_name}}(runtime, element) {
 
